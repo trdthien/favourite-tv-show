@@ -15,5 +15,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class TvShow extends Model
 {
-
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }
