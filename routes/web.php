@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $tvShows = \App\TvShow::with('user')->get();
+    return view('welcome', ['tvShows' => $tvShows]);
 });
 
 Auth::routes();
