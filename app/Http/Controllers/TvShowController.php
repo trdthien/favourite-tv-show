@@ -115,9 +115,6 @@ class TvShowController extends Controller
         $tvShow->quote = $request->get('quote');
         $tvShow->save();
 
-        $user = Auth::user();
-        $user->favouriteTvShows()->save($tvShow);
-
         return redirect('home');
     }
 
